@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+header, aside, main {
+    background-color: #93f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+     grid-template-rows: 100px auto;                               /*grid-auto-rows: 120px;*/
+    gap: 1rem;
+    grid-template-areas: /*Annat sätt att göra för att spänna över elementen*/
+    "header header header header header header"
+    "main main main main aside aside";
+    /*Punkt (.) Används när vi inte vill populera en viss kolumn*/
+    
+}
+
+
+.wrapper header{
+    grid-area: header;
+}
+
+.wrapper main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.wrapper aside{
+    grid-area: aside;
+}
+
+
+
+
+
+/*.wrapper header{
+    /*Auto = följer css-flödet alltså utgår från där elementen är nu och spänner över
+    6 kolumner*/
+    /*grid-column: auto / span 6; /*Samma sak som 1 / 7*/
+/*}
+/*
+
+main{
+    grid-column: auto / span 4;
+    grid-row: auto / span 4 ;
+}
+
+aside{
+    grid-column: auto / span 2;
+    grid-row: auto / span 4;
+}
+
